@@ -11,13 +11,14 @@ class DatabaseService {
   final CollectionReference brewCollection =
       Firestore.instance.collection('brews');
 
-  Future updateUserData(String sugars, String name, int strength) async {
+  Future updateUserData(
+      String sugars, String name, int strength, String photo) async {
     return await brewCollection.document(uid).setData({
       'sugars': sugars,
       'name': name,
       'strength': strength,
-      'photo':
-          'https://firebasestorage.googleapis.com/v0/b/my-family-9ae9d.appspot.com/o/cafes%2Fsemi-cooked.jpg?alt=media&token=8c2122ed-cced-4876-aba1-f6b6b553267a'
+      'photo': photo
+      //'https://firebasestorage.googleapis.com/v0/b/my-family-9ae9d.appspot.com/o/cafes%2Fsemi-cooked.jpg?alt=media&token=8c2122ed-cced-4876-aba1-f6b6b553267a'
     });
   }
   //brewlist from snapshot

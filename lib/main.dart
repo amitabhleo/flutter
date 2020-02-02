@@ -4,7 +4,6 @@ import 'package:my_brew_app/screens/wrapper.dart';
 import 'package:my_brew_app/services/auth.dart';
 import 'package:provider/provider.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
