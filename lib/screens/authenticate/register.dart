@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:my_brew_app/screens/authenticate/signin_email.dart';
@@ -30,10 +31,13 @@ class _RegisterState extends State<Register> {
       // Create a reference to "mountains.jpg"
       //StorageReference myCameraPic = storageRef.child("mountains.jpg");
       StorageUploadTask firebaseUploadTask =
-          FirebaseStorage.instance.ref().child('brews').putFile(imgFile);
-
+          FirebaseStorage.instance.ref().child("images/").putFile(imgFile);
+      // Continue with the task to get the download URL
+      //return firebaseUploadTask.getDownloadUrl();
       if (firebaseUploadTask.isSuccessful) {
         print('file uploaded successfully');
+      } else {
+        print('else statement on firebaseupload task');
       }
     }
 
