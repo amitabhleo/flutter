@@ -18,7 +18,7 @@ class DatabaseService {
       'name': name,
       'strength': strength,
       'photo': photo
-      //'https://firebasestorage.googleapis.com/v0/b/my-family-9ae9d.appspot.com/o/cafes%2Fsemi-cooked.jpg?alt=media&token=8c2122ed-cced-4876-aba1-f6b6b553267a'
+      //'https://firebasestorage.googleapis.com/v0/b/mountains-f6b32.appspot.com/o/images?alt=media&token=a5c82e7c-c95b-4f15-af79-2d9137624eb5'
     });
   }
   //brewlist from snapshot

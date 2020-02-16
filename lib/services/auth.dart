@@ -44,7 +44,7 @@ class AuthService {
           '0',
           'brew crew user',
           100,
-          'https://firebasestorage.googleapis.com/v0/b/my-family-9ae9d.appspot.com/o/cafes%2Fsemi-cooked.jpg?alt=media&token=8c2122ed-cced-4876-aba1-f6b6b553267a');
+          'https://firebasestorage.googleapis.com/v0/b/mountains-f6b32.appspot.com/o/images?alt=media&token=5eb4a7fb-b62a-4ec9-89f0-2d8a67ce525e');
       return _userFromFirebaseuser(user);
     } catch (e) {
       print(e.toString());

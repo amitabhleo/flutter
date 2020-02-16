@@ -29,6 +29,7 @@ class _BrewPostState extends State<BrewPost> {
                             Image.network(mypost['photo']),
                             Text(
                               '${mypost['name']}',
+                              style: TextStyle(fontSize: 20),
                             ),
                           ],
                         ),

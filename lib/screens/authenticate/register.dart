@@ -26,19 +26,27 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    Future uploadPic(BuildContext context) {
+    Future uploadPic(BuildContext context) async {
       File imgFile = _image;
-      // Create a reference to "mountains.jpg"
-      //StorageReference myCameraPic = storageRef.child("mountains.jpg");
+
       StorageUploadTask firebaseUploadTask =
           FirebaseStorage.instance.ref().child("images/").putFile(imgFile);
-      // Continue with the task to get the download URL
-      //return firebaseUploadTask.getDownloadUrl();
-      if (firebaseUploadTask.isSuccessful) {
-        print('file uploaded successfully');
-      } else {
-        print('else statement on firebaseupload task');
-      }
+
+//      Future<String> uploadImage(var imageFile ) async {
+//        StorageReference ref = storage.ref().child("/photo.jpg");
+//        StorageUploadTask uploadTask = ref.putFile(imageFile);
+//
+//        var dowurl = await (await uploadTask.onComplete).ref.getDownloadURL();
+//        url = dowurl.toString();
+//
+//        return url;
+//      }
+
+      var dowurl =
+          await (await firebaseUploadTask.onComplete).ref.getDownloadURL();
+      String url = dowurl.toString();
+
+      print(url);
     }
 
     //uploading image to Firestore
