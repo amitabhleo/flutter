@@ -42,8 +42,8 @@ class AuthService {
       //create a new document for the user with uid
       await DatabaseService(uid: user.uid).updateUserData(
           '0',
-          'brew crew user',
-          100,
+          'New Brew Crew Users',
+          80,
           'https://firebasestorage.googleapis.com/v0/b/mountains-f6b32.appspot.com/o/images?alt=media&token=5eb4a7fb-b62a-4ec9-89f0-2d8a67ce525e');
       return _userFromFirebaseuser(user);
     } catch (e) {

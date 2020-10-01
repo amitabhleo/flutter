@@ -28,8 +28,10 @@ class Home extends StatelessWidget {
                 label: Text('signout'))
           ],
         ),
-        body: BrewPost(),
-        //BrewList(),
+        body:
+
+            //BrewPost(),
+            BrewList(),
       ),
     );
   }
