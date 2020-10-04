@@ -2,6 +2,7 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp();
 
+
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 
@@ -42,3 +43,33 @@ admin.initializeApp();
          //fcm.sendNotification('name',payload);
                  // return admin.firestore().collection('dailyOrders').doc().set({name: snap.data().name });
  });
+
+ exports.addToChainCount = functions.firestore
+     .document('/chains/{id}')
+     .onCreate((snap, context) => {
+            console.log(snap.data());
+             console.log(snap.data().count);
+
+        const db = admin.firestore();
+
+       const docRef = db.collection('chains').doc(context.params.id);
+       //return docRef.set({count:admin.firestore.FieldValue.increment(1)},{merge: true});
+        return admin.firestore().collection('counters').doc('orderNumbers').set({count: admin.firestore.FieldValue.increment(5)},{merge: true});
+       });
+
+     // Initialize document
+     //var chainCounterRef = db.collection('counters').doc('chains');
+//    const newValue = snap.data();
+//        const db = admin.firestore();
+//     var chainCounterRef = db.collection('chains').doc(snap.data().count);
+//     chainCounterRef.update({ count: FieldValue.increment(1) });
+//console.log('chainCounterRef :',chainCounterRef);
+//    var firestore = admin.firestore();
+//    var docRef = firestore.collection('your_collection').doc('your_document');
+//    docRef.update({ itemCount: admin.firestore.FieldValue.increment(1) })
+//         return true;
+
+      // return admin.firestore().collection('counters').doc().create({count: admin.firestore.FieldValue.increment(5)});
+        //count.FieldValue.increment(1) });
+     //snap.data().name });
+ //});
